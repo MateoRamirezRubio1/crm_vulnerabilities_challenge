@@ -3,6 +3,6 @@ class UnfixedVulnerabilitiesSpecification:
         self.fixed_vulnerabilities = fixed_vulnerabilities
 
     def is_satisfied_by(self, vulnerability):
-        return vulnerability["id"] not in [
+        return vulnerability["cve"]["id"] not in [
             vuln.id for vuln in self.fixed_vulnerabilities
         ]
