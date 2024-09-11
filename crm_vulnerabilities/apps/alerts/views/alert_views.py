@@ -4,6 +4,7 @@ from rest_framework import status
 from apps.alerts.services.api_alerts_services.alert_service import AlertService
 from apps.alerts.repositories.alerts_repository import AlertRepository
 from apps.alerts.serializers.list_alert_serializer import ListAlertSerializer
+from rest_framework.permissions import AllowAny
 import logging
 
 logger = logging.getLogger("alerts")
@@ -13,6 +14,8 @@ class AlertListView(APIView):
     """
     View to list all alerts.
     """
+
+    permission_classes = [AllowAny]
 
     def get(self, request):
         try:

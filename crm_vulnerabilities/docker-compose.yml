@@ -4,10 +4,12 @@ services:
   web:
     build: .
     command: >
-      sh -c "python manage.py makemigrations && python manage.py migrate && python manage.py migrate token_blacklist zero && python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
+      sh -c "python manage.py runserver 0.0.0.0:8000"
     volumes:
       - .:/app
     ports:
       - "8000:8000"
     environment:
       - DJANGO_SETTINGS_MODULE=crm_vulnerabilities.settings
+    env_file:
+      - .env

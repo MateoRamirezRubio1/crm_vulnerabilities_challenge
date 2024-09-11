@@ -43,3 +43,56 @@ DEBUG 2024-09-11 14:55:07,849 nvd_client Cache is valid.
 DEBUG 2024-09-11 14:55:07,849 nvd_client Data retrieved from cache.
 DEBUG 2024-09-11 14:55:10,479 nvd_client Cache is valid.
 DEBUG 2024-09-11 14:55:10,479 nvd_client Data retrieved from cache.
+DEBUG 2024-09-11 14:16:37,308 nvd_client Cache is invalid: No cache found.
+DEBUG 2024-09-11 14:16:37,887 nvd_client Fetched 50 vulnerabilities from API.
+DEBUG 2024-09-11 14:16:37,888 nvd_client Data fetched from API. Cache updated.
+INFO 2024-09-11 14:16:44,075 vulnerability_repository Successfully retrieved all fixed vulnerabilities.
+DEBUG 2024-09-11 14:16:48,353 nvd_client Cache is valid.
+DEBUG 2024-09-11 14:16:48,353 nvd_client Data retrieved from cache.
+INFO 2024-09-11 14:16:48,353 vulnerability_repository Successfully retrieved all fixed vulnerabilities.
+INFO 2024-09-11 14:16:55,827 vulnerability_repository Successfully retrieved all fixed vulnerabilities.
+DEBUG 2024-09-11 14:17:04,392 nvd_client Cache is valid.
+DEBUG 2024-09-11 14:17:04,392 nvd_client Vulnerability CVE-1999-0082 existence check: True
+INFO 2024-09-11 14:17:04,509 vulnerability_repository Successfully added a new fixed vulnerability with ID CVE-1999-0082.
+INFO 2024-09-11 14:17:04,653 vulnerability_observer Alert sent to admin@example.com with message: The vulnerability CVE-1999-0082 has been fixed.
+INFO 2024-09-11 14:17:06,663 vulnerability_repository Successfully retrieved all fixed vulnerabilities.
+DEBUG 2024-09-11 14:17:10,391 nvd_client Cache is valid.
+DEBUG 2024-09-11 14:17:10,392 nvd_client Data retrieved from cache.
+INFO 2024-09-11 14:17:10,392 vulnerability_repository Successfully retrieved all fixed vulnerabilities.
+DEBUG 2024-09-11 19:31:46,351 nvd_client Cache is invalid: No cache found.
+DEBUG 2024-09-11 19:31:47,161 nvd_client Fetched 50 vulnerabilities from API.
+DEBUG 2024-09-11 19:31:47,162 nvd_client Data fetched from API. Cache updated.
+DEBUG 2024-09-11 19:31:50,928 nvd_client Cache is valid.
+DEBUG 2024-09-11 19:31:50,928 nvd_client Data retrieved from cache.
+DEBUG 2024-09-11 19:31:51,397 nvd_client Cache is valid.
+DEBUG 2024-09-11 19:31:51,398 nvd_client Data retrieved from cache.
+DEBUG 2024-09-11 19:31:53,320 nvd_client Cache is valid.
+DEBUG 2024-09-11 19:31:53,320 nvd_client Data retrieved from cache.
+DEBUG 2024-09-11 19:31:53,482 nvd_client Cache is valid.
+DEBUG 2024-09-11 19:31:53,482 nvd_client Data retrieved from cache.
+DEBUG 2024-09-11 19:31:53,654 nvd_client Cache is valid.
+DEBUG 2024-09-11 19:31:53,654 nvd_client Data retrieved from cache.
+DEBUG 2024-09-11 19:31:53,786 nvd_client Cache is valid.
+DEBUG 2024-09-11 19:31:53,787 nvd_client Data retrieved from cache.
+DEBUG 2024-09-11 19:31:53,928 nvd_client Cache is valid.
+DEBUG 2024-09-11 19:31:53,928 nvd_client Data retrieved from cache.
+DEBUG 2024-09-11 19:33:00,518 nvd_client Cache is valid.
+DEBUG 2024-09-11 19:33:00,518 nvd_client Data retrieved from cache.
+DEBUG 2024-09-11 19:33:04,426 nvd_client Cache is valid.
+DEBUG 2024-09-11 19:33:04,426 nvd_client Data retrieved from cache.
+INFO 2024-09-11 19:33:04,427 vulnerability_repository Successfully retrieved all fixed vulnerabilities.
+WARNING 2024-09-11 19:33:04,433 vulnerability_service No fixed vulnerabilities retrieved from the repository.
+INFO 2024-09-11 19:33:10,288 vulnerability_repository Successfully retrieved all fixed vulnerabilities.
+WARNING 2024-09-11 19:33:10,294 vulnerability_service No fixed vulnerabilities retrieved from the repository.
+DEBUG 2024-09-11 19:33:22,805 nvd_client Cache is valid.
+DEBUG 2024-09-11 19:33:22,805 nvd_client Vulnerability CVE-1999-0095 existence check: True
+INFO 2024-09-11 19:33:22,953 vulnerability_repository Successfully added a new fixed vulnerability with ID CVE-1999-0095.
+INFO 2024-09-11 19:33:23,110 vulnerability_observer Alert sent to admin@example.com with message: The vulnerability CVE-1999-0095 has been fixed.
+DEBUG 2024-09-11 19:33:27,629 nvd_client Cache is valid.
+DEBUG 2024-09-11 19:33:27,629 nvd_client Data retrieved from cache.
+INFO 2024-09-11 19:33:27,629 vulnerability_repository Successfully retrieved all fixed vulnerabilities.
+DEBUG 2024-09-11 19:33:46,298 nvd_client Cache is valid.
+DEBUG 2024-09-11 19:33:46,298 nvd_client Data retrieved from cache.
+DEBUG 2024-09-11 19:36:46,314 nvd_client Cache is invalid: No cache found.
+DEBUG 2024-09-11 19:36:47,006 nvd_client Fetched 50 vulnerabilities from API.
+DEBUG 2024-09-11 19:36:47,007 nvd_client Data fetched from API. Cache updated.

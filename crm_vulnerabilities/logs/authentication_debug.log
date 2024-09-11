@@ -13,3 +13,15 @@ INFO 2024-09-11 14:53:00,637 services User juancho registered successfully.
 INFO 2024-09-11 14:53:00,637 views User registered successfully: juancho
 ERROR 2024-09-11 14:53:17,335 views Error obtaining JWT token: No active account found with the given credentials
 INFO 2024-09-11 14:53:30,006 views JWT token obtained successfully for user: juancho
+INFO 2024-09-11 14:19:28,275 repositories User prueba saved successfully.
+INFO 2024-09-11 14:19:28,275 services User prueba registered successfully.
+INFO 2024-09-11 14:19:28,275 views User registered successfully: prueba
+INFO 2024-09-11 14:19:36,969 views JWT token obtained successfully for user: prueba
+INFO 2024-09-11 19:32:45,974 repositories User prueba saved successfully.
+INFO 2024-09-11 19:32:45,975 services User prueba registered successfully.
+INFO 2024-09-11 19:32:45,975 views User registered successfully: prueba
+INFO 2024-09-11 19:32:56,489 views JWT token obtained successfully for user: prueba
+INFO 2024-09-11 19:36:59,394 repositories User juan saved successfully.
+INFO 2024-09-11 19:36:59,394 services User juan registered successfully.
+INFO 2024-09-11 19:36:59,394 views User registered successfully: juan
+ERROR 2024-09-11 19:37:15,039 views Error obtaining JWT token: table token_blacklist_outstandingtoken has no column named jti
