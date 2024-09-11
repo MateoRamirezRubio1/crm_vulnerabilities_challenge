@@ -12,6 +12,9 @@ class PushAlertService:
             f"Simulación de envío de notificación push a {recipient}. Mensaje: {message}"
         )
 
+        # Guardar la notificación en la base de datos
+        self._record_notification(recipient, message)
+
     def _record_notification(self, recipient, message):
         """Registra la notificación en la base de datos."""
         self.alert_repository.save_alert(

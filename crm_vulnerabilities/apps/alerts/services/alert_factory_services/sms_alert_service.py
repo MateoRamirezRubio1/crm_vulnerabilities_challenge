@@ -10,6 +10,9 @@ class SMSAlertService:
         """Simula el envío de una alerta por SMS."""
         print(f"Simulación de envío de SMS a {recipient}. Mensaje: {message}")
 
+        # Guardar la notificación en la base de datos
+        self._record_notification(recipient, message)
+
     def _record_notification(self, recipient, message):
         """Registra la notificación en la base de datos."""
         self.alert_repository.save_alert(

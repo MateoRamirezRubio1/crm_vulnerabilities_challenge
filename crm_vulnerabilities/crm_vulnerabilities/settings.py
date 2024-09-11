@@ -10,6 +10,8 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
+import os
+import logging.config
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -32,6 +34,8 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     "rest_framework",
+    "rest_framework_simplejwt.token_blacklist",
+    "apps.authentication",
     "apps.alerts",
     "apps.vulnerabilities",
     "django.contrib.admin",
@@ -42,6 +46,30 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
 ]
 
+REST_FRAMEWORK = {
+    "DEFAULT_AUTHENTICATION_CLASSES": (
+        "rest_framework_simplejwt.authentication.JWTAuthentication",  # JWT para la autenticación
+    ),
+    "DEFAULT_PERMISSION_CLASSES": (
+        "rest_framework.permissions.IsAuthenticated",  # Todas las vistas requieren autenticación por defecto
+    ),
+}
+
+# Configuración de JWT y manejo de expiración/rotación de tokens
+from datetime import timedelta
+
+SIMPLE_JWT = {
+    "ACCESS_TOKEN_LIFETIME": timedelta(
+        minutes=10
+    ),  # Duración corta del token de acceso
+    "REFRESH_TOKEN_LIFETIME": timedelta(days=7),  # Duración larga del token de refresco
+    "ROTATE_REFRESH_TOKENS": True,  # Rotar tokens de refresco cuando se utilicen
+    "BLACKLIST_AFTER_ROTATION": True,  # El token viejo se pone en la lista negra tras la rotación
+    "AUTH_HEADER_TYPES": ("Bearer",),  # Tipo de cabecera de autorización
+}
+
+AUTH_USER_MODEL = "authentication.User"
+
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
@@ -51,6 +79,65 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
+
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "formatters": {
+        "verbose": {
+            "format": "{levelname} {asctime} {module} {message}",
+            "style": "{",
+        },
+        "simple": {
+            "format": "{levelname} {message}",
+            "style": "{",
+        },
+    },
+    "handlers": {
+        "file_vulnerabilities": {
+            "level": "DEBUG",
+            "class": "logging.FileHandler",
+            "filename": os.path.join(BASE_DIR, "logs/vulnerabilities_debug.log"),
+            "formatter": "verbose",
+        },
+        "file_alerts": {
+            "level": "DEBUG",
+            "class": "logging.FileHandler",
+            "filename": os.path.join(BASE_DIR, "logs/alerts_debug.log"),
+            "formatter": "verbose",
+        },
+        "file_authentication": {
+            "level": "DEBUG",
+            "class": "logging.FileHandler",
+            "filename": os.path.join(BASE_DIR, "logs/authentication_debug.log"),
+            "formatter": "verbose",
+        },
+        "console": {
+            "level": "ERROR",
+            "class": "logging.StreamHandler",
+            "formatter": "simple",
+        },
+    },
+    "loggers": {
+        "vulnerabilities": {
+            "handlers": ["file_vulnerabilities", "console"],
+            "level": "DEBUG",
+            "propagate": False,
+        },
+        "alerts": {
+            "handlers": ["file_alerts", "console"],
+            "level": "DEBUG",
+            "propagate": False,
+        },
+        "authentication": {
+            "handlers": ["file_authentication", "console"],
+            "level": "DEBUG",
+            "propagate": False,
+        },
+    },
+}
+
+logging.config.dictConfig(LOGGING)
 
 ROOT_URLCONF = "crm_vulnerabilities.urls"
 
