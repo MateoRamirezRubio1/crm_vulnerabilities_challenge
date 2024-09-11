@@ -1,3 +1,40 @@
+# Instrucciones para ejecutar la aplicación con Docker Compose
+## 1. Clonar el repositorio
+Primero, clona el repositorio en tu máquina local:
+
+```bash
+git clone https://github.com/MateoRamirezRubio1/crm_vulnerabilities_challenge.git
+cd crm_vulnerabilities
+```
+
+## 2. Construir la imagen y ejecutar los servicios
+Para ejecutar la aplicación con Docker Compose, asegúrate de estar en la raíz del proyecto (donde está el archivo docker-compose.yml) y ejecuta el siguiente comando:
+
+```bash
+docker-compose up --build
+```
+
+Esto realizará las siguientes acciones:
+
+Construir la imagen Docker definida en el Dockerfile.
+Ejecutar los comandos necesarios de migración de la base de datos:
+python manage.py makemigrations
+python manage.py migrate
+python manage.py migrate token_blacklist zero
+Iniciar el servidor de desarrollo de Django en el puerto 8000.
+
+## 3. Acceder a la aplicación
+Una vez que el contenedor esté en funcionamiento, puedes acceder a la aplicación desde tu navegador en la siguiente URL:
+
+```
+http://localhost:8000
+```
+
+# Implementación de Rate Limiting
+El proyecto implementa un rate limiter o limitador de tasa que restringe el número de peticiones que se pueden realizar a la API. Este rate limiter ha sido configurado para permitir un máximo de 15 peticiones por minuto, lo que previene que un solo cliente realice demasiadas solicitudes en un corto periodo, evitando una sobrecarga en la API.
+
+Cuando se supera este límite, el cliente recibe una respuesta de error (429 Too Many Requests), indicando que deberá esperar antes de realizar más solicitudes. Este mecanismo protege tanto el servidor como el cliente al regular el flujo de datos y asegurar un acceso justo para todos los usuarios.
+
 # Módulo de Vulnerabilidades
 
 ## Descripción
