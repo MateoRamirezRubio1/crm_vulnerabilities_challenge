@@ -121,4 +121,72 @@ El módulo expone el siguiente endpoint para interactuar con las alertas:
 - **`GET /api/alerts/`**: Obtiene la lista completa de alertas.
 
 
+# Módulo de Autenticación
+
+## Descripción
+
+El módulo de `authentication` proporciona funcionalidades para la autenticación de usuarios utilizando **JWT (JSON Web Tokens)**. Este módulo permite a los usuarios registrarse, iniciar sesión, y manejar la autorización mediante diferentes roles (admin, advanced, basic). Los permisos son gestionados a través de clases personalizadas de permisos que definen qué tipo de usuario puede acceder a ciertas vistas.
+
+## Estructura del Módulo
+
+### 4. `models.py`
+Contiene el modelo de usuario extendido, que incluye campos adicionales como `role` para manejar roles personalizados (`admin`, `advanced`, `basic`).
+
+- **Roles de usuario**:
+  - `admin`: Administrador con acceso completo a todas las funcionalidades.
+  - `advanced`: Usuario avanzado con permisos adicionales.
+  - `basic`: Usuario básico con acceso limitado.
+
+### 5. `permissions.py`
+Define permisos personalizados para los diferentes roles. Cada clase de permiso (`IsAdmin`, `IsAdvancedUser`, `IsBasicUser`) comprueba el rol del usuario que realiza la solicitud.
+
+- **Permisos personalizados**:
+  - `IsAdmin`: Solo usuarios con rol de `admin`.
+  - `IsAdvancedUser`: Solo usuarios con rol de `advanced`.
+  - `IsBasicUser`: Solo usuarios con rol de `basic`.
+
+### 6. `repositories.py`
+Encapsula la lógica de acceso a la base de datos relacionada con la autenticación de usuarios. Gestiona las consultas a la base de datos para la creación de usuarios.
+
+### 7. `serializers.py`
+Define los serializadores que convierten los datos de los usuarios en JSON y viceversa. También se utiliza para validar los datos de registro e inicio de sesión.
+
+- `RegisterSerializer`: Gestiona el registro de nuevos usuarios.
+- `CustomTokenObtainPairSerializer`: Personaliza el token JWT, incluyendo información adicional como el rol del usuario en la respuesta.
+
+### 8. `services.py`
+Incluye la lógica de negocio para el registro de usuarios.
+
+### 10. `urls.py`
+Define las rutas para las vistas relacionadas con la autenticación. Las rutas disponibles son:
+
+- `/login/`: Iniciar sesión y obtener el token JWT.
+- `/register/`: Registrar un nuevo usuario.
+- `/logout/`: Hacer logout y añadir el refresh token a la lista negra.
+- `/refresh/`: Obtener un nuevo access token mediante el refresh token.
+
+### 11. `views.py`
+Define las vistas que manejan las solicitudes HTTP relacionadas con la autenticación:
+
+- `CustomTokenObtainPairView`: Vista para obtener los tokens JWT (access y refresh) al iniciar sesión.
+- `RegisterView`: Vista para registrar nuevos usuarios.
+- `LogoutAndBlacklistRefreshTokenView`: Vista para hacer logout y añadir el token de refresh a la lista negra.
+
+## Endpoints
+
+El módulo expone los siguientes endpoints para la autenticación y manejo de roles:
+
+- **`POST /api/authentication/login/`**: Inicia sesión y devuelve el `access` y `refresh` tokens.
+- **`POST /api/authentication/register/`**: Registra un nuevo usuario.
+- **`POST /api/authentication/logout/`**: Añade el `refresh` token a la lista negra y cierra sesión.
+- **`POST /api/authentication/refresh/`**: Renueva el `access` token utilizando el `refresh` token.
+
+## Permisos
+
+El sistema de permisos está basado en roles de usuario, definidos en el modelo de usuario. Los permisos están gestionados por las clases de permisos personalizados:
+
+1. **IsAdmin**: Solo permite el acceso a usuarios con rol `admin`.
+2. **IsAdvancedUser**: Solo permite el acceso a usuarios con rol `advanced`.
+3. **IsBasicUser**: Solo permite el acceso a usuarios con rol `basic`.
+
 
