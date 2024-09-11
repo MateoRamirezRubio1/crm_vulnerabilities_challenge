@@ -69,3 +69,56 @@ El cliente de la API de NVD (National Vulnerability Database) ha sido diseñado 
 Este mecanismo de cache permite reducir la latencia de las consultas y evitar el exceso de solicitudes a la API de NIST, especialmente cuando se manejan grandes volúmenes de datos.
 
 Si los datos en cache siguen siendo válidos, se devolverán sin necesidad de realizar una nueva consulta al servidor.
+
+
+# Módulo de Alertas
+
+## Descripción
+
+El módulo de `alerts` está diseñado para gestionar las alertas generadas a partir de vulnerabilidades u otros eventos relevantes. Implementa un sistema de notificaciones que utiliza múltiples canales de comunicación, como correos electrónicos, SMS, notificaciones push, y Slack. Este módulo sigue patrones de diseño, incluyendo el patrón **Observer**, **Factory**, y **Singleton**, para gestionar eficientemente la creación, distribución y observación de alertas.
+
+## Estructura del Módulo
+
+### 1. `observers/`
+Este directorio contiene el **Subject** del patrón **Observer**: `AlertSubject`. Aquí se define el comportamiento que permite suscribir a diferentes observadores para reaccionar ante cambios, como la creación de una nueva alerta.
+
+- **Patrón utilizado**: **Observer**, con `AlertSubject` gestionando la suscripción de observadores y distribuyendo notificaciones de nuevas alertas.
+
+### 2. `repositories/`
+Contiene el repositorio de alertas (`AlertsRepository`), que maneja el acceso a los datos relacionados con las alertas y sus detalles.
+
+- **Patrón utilizado**: **Repository**, para encapsular las operaciones de acceso a la base de datos y desacoplar la lógica de negocio de la lógica de persistencia.
+
+### 3. `serializers/`
+Incluye el serializador `ListAlertSerializer`, el cual convierte las alertas en un formato que puede ser enviado a través de la API.
+
+- **Patrón utilizado**: **Adapter**, ya que transforma las entidades del sistema en datos listos para ser consumidos por la API.
+
+### 4. `services/`
+#### `alert_factory_services/`
+Esta subcarpeta contiene los servicios de la **Fábrica de Alertas**. Se utiliza para crear y despachar alertas a través de múltiples canales.
+
+- `AlertFactory`: Es responsable de crear diferentes tipos de alertas.
+- `AlertDispatcher`: Se encarga de despachar las alertas generadas a los canales correspondientes.
+- `EmailAlertService`, `PushAlertService`, `SlackAlertService`, `SMSAlertService`: Estos servicios representan las alertas enviadas a través de diferentes medios de comunicación.
+
+- **Patrón utilizado**: 
+  - **Factory** para la creación de diferentes tipos de alertas según la severidad de la vulnerabilidad (Al momento de ingresar una nueva vulnerabilidad por medio del POST de la app vulnerabilities, dependiendo de la severidad de la vulnerabilidad ingresada se envía un tipo de alerta u otra).
+
+#### `api_alert_services/`
+En esta subcarpeta se define `AlertService`, que gestiona la lógica de negocio de las alertas desde el punto de vista de la API.
+
+### 5. `views/`
+Contiene las vistas basadas en clases que exponen la API para la gestión de alertas:
+   - **`AlertListView`**: Devuelve la lista completa de alertas registradas en el sistema.
+
+- **Patrón utilizado**: **View Layer** de Django, utilizando vistas basadas en clases.
+
+## Endpoints
+
+El módulo expone el siguiente endpoint para interactuar con las alertas:
+
+- **`GET /api/alerts/`**: Obtiene la lista completa de alertas.
+
+
+
