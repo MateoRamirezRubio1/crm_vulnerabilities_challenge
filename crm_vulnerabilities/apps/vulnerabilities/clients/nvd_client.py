@@ -73,13 +73,13 @@ class NVDClient:
         return self._vulnerabilities_cache
 
     def vulnerability_exists(self, vulnerability_id):
-        """Verifica si una vulnerabilidad existe en el conjunto de datos obtenido de la API del NIST"""
+        """Checks if a vulnerability exists in the dataset obtained from the NIST API"""
         if self._vulnerabilities_cache is None or not self._is_cache_valid():
             self.fetch_vulnerabilities()
 
         # Check if the vulnerability_id is in the cached list of vulnerabilities
         exists = any(
-            vuln.get("cve", {}).get("CVE_data_meta", {}).get("ID") == vulnerability_id
+            vuln["cve"]["id"] == vulnerability_id
             for vuln in self._vulnerabilities_cache
         )
         logger.debug("Vulnerability %s existence check: %s", vulnerability_id, exists)

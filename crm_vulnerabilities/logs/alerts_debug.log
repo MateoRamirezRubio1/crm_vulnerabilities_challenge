@@ -1,0 +1,36 @@
+INFO 2024-09-11 14:31:00,202 alert_subject Observer <apps.vulnerabilities.observers.vulnerability_observer.VulnerabilityObserver object at 0x7f792293abd0> attached.
+INFO 2024-09-11 14:31:00,829 alert_subject Observer <apps.vulnerabilities.observers.vulnerability_observer.VulnerabilityObserver object at 0x7fe86bda2c90> attached.
+INFO 2024-09-11 14:31:34,191 alert_subject Observer <apps.vulnerabilities.observers.vulnerability_observer.VulnerabilityObserver object at 0x7f76be59f010> attached.
+INFO 2024-09-11 14:32:08,128 alert_subject Observer <apps.vulnerabilities.observers.vulnerability_observer.VulnerabilityObserver object at 0x7f006f38c2d0> attached.
+INFO 2024-09-11 14:32:16,657 alert_subject Observer <apps.vulnerabilities.observers.vulnerability_observer.VulnerabilityObserver object at 0x7f65acd2b6d0> attached.
+INFO 2024-09-11 09:35:03,097 alert_subject Observer <apps.vulnerabilities.observers.vulnerability_observer.VulnerabilityObserver object at 0x000001D80F340550> attached.
+INFO 2024-09-11 09:35:03,602 alert_subject Observer <apps.vulnerabilities.observers.vulnerability_observer.VulnerabilityObserver object at 0x0000024B65D40550> attached.
+INFO 2024-09-11 14:40:05,920 alert_subject Observer <apps.vulnerabilities.observers.vulnerability_observer.VulnerabilityObserver object at 0x7f9de4656750> attached.
+INFO 2024-09-11 14:40:07,133 alert_subject Observer <apps.vulnerabilities.observers.vulnerability_observer.VulnerabilityObserver object at 0x7fc5b0c86350> attached.
+INFO 2024-09-11 14:40:08,335 alert_subject Observer <apps.vulnerabilities.observers.vulnerability_observer.VulnerabilityObserver object at 0x7f3c05d3e210> attached.
+INFO 2024-09-11 14:40:09,016 alert_subject Observer <apps.vulnerabilities.observers.vulnerability_observer.VulnerabilityObserver object at 0x7f4fb7153a10> attached.
+INFO 2024-09-11 14:42:44,480 alert_subject Observer <apps.vulnerabilities.observers.vulnerability_observer.VulnerabilityObserver object at 0x7fde798e74d0> attached.
+INFO 2024-09-11 14:42:45,769 alert_subject Observer <apps.vulnerabilities.observers.vulnerability_observer.VulnerabilityObserver object at 0x7f42bda59b50> attached.
+INFO 2024-09-11 14:42:46,982 alert_subject Observer <apps.vulnerabilities.observers.vulnerability_observer.VulnerabilityObserver object at 0x7f9f06016250> attached.
+INFO 2024-09-11 14:43:32,883 alert_subject Observer <apps.vulnerabilities.observers.vulnerability_observer.VulnerabilityObserver object at 0x7f8afcc9e350> attached.
+INFO 2024-09-11 14:43:34,028 alert_subject Observer <apps.vulnerabilities.observers.vulnerability_observer.VulnerabilityObserver object at 0x7f0196049b50> attached.
+INFO 2024-09-11 14:43:36,718 alert_subject Observer <apps.vulnerabilities.observers.vulnerability_observer.VulnerabilityObserver object at 0x7ff6b6102250> attached.
+INFO 2024-09-11 14:47:26,147 alert_subject Observer <apps.vulnerabilities.observers.vulnerability_observer.VulnerabilityObserver object at 0x7f08e2be21d0> attached.
+INFO 2024-09-11 14:47:27,323 alert_subject Observer <apps.vulnerabilities.observers.vulnerability_observer.VulnerabilityObserver object at 0x7ff765dd6350> attached.
+INFO 2024-09-11 14:47:29,948 alert_subject Observer <apps.vulnerabilities.observers.vulnerability_observer.VulnerabilityObserver object at 0x7f0ada2fe550> attached.
+INFO 2024-09-11 14:50:42,570 alert_subject Observer <apps.vulnerabilities.observers.vulnerability_observer.VulnerabilityObserver object at 0x7f7e90a601d0> attached.
+INFO 2024-09-11 14:50:43,808 alert_subject Observer <apps.vulnerabilities.observers.vulnerability_observer.VulnerabilityObserver object at 0x7f576127a1d0> attached.
+INFO 2024-09-11 14:50:46,258 alert_subject Observer <apps.vulnerabilities.observers.vulnerability_observer.VulnerabilityObserver object at 0x7ff978eb6510> attached.
+INFO 2024-09-11 09:51:15,981 alert_subject Observer <apps.vulnerabilities.observers.vulnerability_observer.VulnerabilityObserver object at 0x00000252EBC904F0> attached.
+INFO 2024-09-11 14:52:25,558 alert_subject Observer <apps.vulnerabilities.observers.vulnerability_observer.VulnerabilityObserver object at 0x7f3a0b4134d0> attached.
+INFO 2024-09-11 14:52:26,782 alert_subject Observer <apps.vulnerabilities.observers.vulnerability_observer.VulnerabilityObserver object at 0x7f70c9de9590> attached.
+INFO 2024-09-11 14:52:28,710 alert_subject Observer <apps.vulnerabilities.observers.vulnerability_observer.VulnerabilityObserver object at 0x7fe9ccfea790> attached.
+INFO 2024-09-11 14:52:32,625 alert_subject Observer <apps.vulnerabilities.observers.vulnerability_observer.VulnerabilityObserver object at 0x7f014fe67cd0> attached.
+INFO 2024-09-11 14:52:35,541 alert_subject Observer <apps.vulnerabilities.observers.vulnerability_observer.VulnerabilityObserver object at 0x7fadaf49e590> attached.
+INFO 2024-09-11 14:52:36,079 alert_subject Observer <apps.vulnerabilities.observers.vulnerability_observer.VulnerabilityObserver object at 0x7f9d872ba6d0> attached.
+INFO 2024-09-11 14:54:51,137 alert_subject State updated to {'severity': 'HIGH', 'recipient': 'admin@example.com', 'message': 'The vulnerability CVE-1999-0095 has been fixed.'}. Notifying observers.
+INFO 2024-09-11 14:54:51,137 alert_factory Using EmailAlertService for alert severity: HIGH
+INFO 2024-09-11 14:54:51,281 alerts_repository Alert saved successfully: Notification to admin@example.com with severity HIGH on 2024-09-11 14:54:51.137710+00:00
+INFO 2024-09-11 14:54:51,281 email_alert_service Notification recorded in database for recipient: admin@example.com
+INFO 2024-09-11 14:54:51,282 email_alert_service Email sent to admin@example.com with message: The vulnerability CVE-1999-0095 has been fixed.
+INFO 2024-09-11 14:54:51,282 alert_subject Notified observer <apps.vulnerabilities.observers.vulnerability_observer.VulnerabilityObserver object at 0x7f9d872ba6d0> with state {'severity': 'HIGH', 'recipient': 'admin@example.com', 'message': 'The vulnerability CVE-1999-0095 has been fixed.'}.

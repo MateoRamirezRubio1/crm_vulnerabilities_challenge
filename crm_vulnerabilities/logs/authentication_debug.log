@@ -1,0 +1,15 @@
+ERROR 2024-09-11 14:34:25,103 repositories Failed to save user juan: UNIQUE constraint failed: authentication_user.username
+ERROR 2024-09-11 14:34:25,104 services IntegrityError during user registration: UNIQUE constraint failed: authentication_user.username
+ERROR 2024-09-11 14:34:25,104 views IntegrityError during user registration: UNIQUE constraint failed: authentication_user.username
+INFO 2024-09-11 09:36:11,585 repositories User juancho saved successfully.
+INFO 2024-09-11 09:36:11,585 services User juancho registered successfully.
+INFO 2024-09-11 09:36:11,585 views User registered successfully: juancho
+INFO 2024-09-11 09:36:32,007 views JWT token obtained successfully for user: juan
+ERROR 2024-09-11 14:40:47,642 repositories Failed to save user juancho: UNIQUE constraint failed: authentication_user.username
+ERROR 2024-09-11 14:40:47,643 services IntegrityError during user registration: UNIQUE constraint failed: authentication_user.username
+ERROR 2024-09-11 14:40:47,643 views IntegrityError during user registration: UNIQUE constraint failed: authentication_user.username
+INFO 2024-09-11 14:53:00,637 repositories User juancho saved successfully.
+INFO 2024-09-11 14:53:00,637 services User juancho registered successfully.
+INFO 2024-09-11 14:53:00,637 views User registered successfully: juancho
+ERROR 2024-09-11 14:53:17,335 views Error obtaining JWT token: No active account found with the given credentials
+INFO 2024-09-11 14:53:30,006 views JWT token obtained successfully for user: juancho

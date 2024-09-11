@@ -10,17 +10,28 @@ from apps.alerts.services.alert_factory_services.push_alert_service import (
 from apps.alerts.services.alert_factory_services.slack_alert_service import (
     SlackAlertService,
 )
+import logging
+
+logger = logging.getLogger("alerts")
 
 
 class AlertFactory:
-    def get_alert_service(self, alert_severity):
-        if alert_severity == "HIGH":
-            return EmailAlertService()
-        elif alert_severity == "MEDIUM":
-            return SMSAlertService()
-        elif alert_severity == "LOW":
-            return PushAlertService()
-        elif alert_severity == "CRITICAL":
-            return SlackAlertService()
-        else:
-            raise ValueError(f"Severidad de alerta '{alert_severity}' no soportada.")
+    def get_alert_service(self, alert_severity: str):
+        """
+        Returns the appropriate alert service based on the severity level.
+        """
+        services = {
+            "HIGH": EmailAlertService,
+            "MEDIUM": SMSAlertService,
+            "LOW": PushAlertService,
+            "CRITICAL": SlackAlertService,
+        }
+
+        if alert_severity not in services:
+            logger.error(f"Unsupported alert severity: {alert_severity}")
+            raise ValueError(f"Alert severity '{alert_severity}' is not supported.")
+
+        logger.info(
+            f"Using {services[alert_severity].__name__} for alert severity: {alert_severity}"
+        )
+        return services[alert_severity]()

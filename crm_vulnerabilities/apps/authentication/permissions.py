@@ -2,21 +2,21 @@ from rest_framework.permissions import BasePermission
 
 
 class IsAdmin(BasePermission):
-    """Permiso para rol admin"""
+    """Permission class for admin users"""
 
     def has_permission(self, request, view):
         return request.user and request.user.role == "admin"
 
 
 class IsAdvancedUser(BasePermission):
-    """Permiso para usuarios avanzados"""
+    """Permission class for advanced users"""
 
     def has_permission(self, request, view):
         return request.user and request.user.role == "advanced"
 
 
 class IsBasicUser(BasePermission):
-    """Permiso para usuarios básicos"""
+    """Permission class for basic users"""
 
     def has_permission(self, request, view):
         return request.user and request.user.role == "basic"

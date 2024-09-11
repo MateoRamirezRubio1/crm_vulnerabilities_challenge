@@ -1,75 +1,45 @@
-INFO 2024-09-10 22:15:08,747 vulnerability_repository Successfully retrieved all fixed vulnerabilities.
-INFO 2024-09-10 22:15:28,714 vulnerability_repository Successfully retrieved all fixed vulnerabilities.
-INFO 2024-09-10 22:15:45,526 vulnerability_repository Successfully retrieved all fixed vulnerabilities.
-INFO 2024-09-10 22:24:14,719 vulnerability_repository Successfully retrieved all fixed vulnerabilities.
-INFO 2024-09-10 22:24:20,309 vulnerability_repository Successfully retrieved all fixed vulnerabilities.
-INFO 2024-09-10 22:24:24,367 vulnerability_repository Successfully retrieved all fixed vulnerabilities.
-INFO 2024-09-10 22:26:26,702 vulnerability_repository Successfully retrieved all fixed vulnerabilities.
-DEBUG 2024-09-10 22:28:27,907 nvd_client Cache is invalid: No cache found.
-DEBUG 2024-09-10 22:28:28,382 nvd_client Fetched 10 vulnerabilities from API.
-DEBUG 2024-09-10 22:28:28,383 nvd_client Data fetched from API. Cache updated.
-DEBUG 2024-09-10 22:28:32,360 nvd_client Cache is valid.
-DEBUG 2024-09-10 22:28:32,361 nvd_client Data retrieved from cache.
-DEBUG 2024-09-10 22:28:39,653 nvd_client Cache is valid.
-DEBUG 2024-09-10 22:28:39,654 nvd_client Data retrieved from cache.
-DEBUG 2024-09-10 22:28:44,876 nvd_client Cache is valid.
-DEBUG 2024-09-10 22:28:44,876 nvd_client Data retrieved from cache.
-DEBUG 2024-09-10 22:28:46,828 nvd_client Cache is valid.
-DEBUG 2024-09-10 22:28:46,828 nvd_client Data retrieved from cache.
-DEBUG 2024-09-10 22:28:50,118 nvd_client Cache is valid.
-DEBUG 2024-09-10 22:28:50,118 nvd_client Data retrieved from cache.
-INFO 2024-09-10 22:28:50,118 vulnerability_repository Successfully retrieved all fixed vulnerabilities.
-DEBUG 2024-09-10 22:28:53,785 nvd_client Cache is valid.
-DEBUG 2024-09-10 22:28:53,785 nvd_client Data retrieved from cache.
-INFO 2024-09-10 22:28:53,785 vulnerability_repository Successfully retrieved all fixed vulnerabilities.
-INFO 2024-09-10 22:29:00,082 vulnerability_repository Successfully retrieved all fixed vulnerabilities.
-INFO 2024-09-10 22:29:04,390 vulnerability_repository Successfully retrieved all fixed vulnerabilities.
-INFO 2024-09-10 22:29:08,963 vulnerability_repository Successfully retrieved all fixed vulnerabilities.
-DEBUG 2024-09-10 22:36:02,134 nvd_client Cache is valid.
-DEBUG 2024-09-10 22:36:02,134 nvd_client Data retrieved from cache.
-INFO 2024-09-10 22:36:02,134 vulnerability_repository Successfully retrieved all fixed vulnerabilities.
-DEBUG 2024-09-10 22:36:20,038 nvd_client Cache is valid.
-DEBUG 2024-09-10 22:36:20,038 nvd_client Data retrieved from cache.
-DEBUG 2024-09-10 22:36:30,117 nvd_client Cache is valid.
-DEBUG 2024-09-10 22:36:30,117 nvd_client Data retrieved from cache.
-INFO 2024-09-10 22:36:30,117 vulnerability_repository Successfully retrieved all fixed vulnerabilities.
-INFO 2024-09-10 22:36:35,495 vulnerability_repository Successfully retrieved all fixed vulnerabilities.
-DEBUG 2024-09-10 23:46:35,609 nvd_client Cache is invalid: Timeout exceeded.
-DEBUG 2024-09-10 23:46:36,112 nvd_client Fetched 10 vulnerabilities from API.
-DEBUG 2024-09-10 23:46:36,114 nvd_client Data fetched from API. Cache updated.
-DEBUG 2024-09-10 23:46:40,094 nvd_client Cache is valid.
-DEBUG 2024-09-10 23:46:40,095 nvd_client Data retrieved from cache.
-DEBUG 2024-09-10 23:52:14,125 nvd_client Cache is valid.
-DEBUG 2024-09-10 23:52:14,125 nvd_client Data retrieved from cache.
-DEBUG 2024-09-10 23:52:32,252 nvd_client Cache is valid.
-DEBUG 2024-09-10 23:52:32,252 nvd_client Data retrieved from cache.
-DEBUG 2024-09-11 02:04:13,023 nvd_client Cache is invalid: No cache found.
-DEBUG 2024-09-11 02:04:13,646 nvd_client Fetched 10 vulnerabilities from API.
-DEBUG 2024-09-11 02:04:13,648 nvd_client Data fetched from API. Cache updated.
-DEBUG 2024-09-11 02:04:30,668 nvd_client Cache is valid.
-DEBUG 2024-09-11 02:04:30,668 nvd_client Data retrieved from cache.
-DEBUG 2024-09-11 02:04:32,023 nvd_client Cache is valid.
-DEBUG 2024-09-11 02:04:32,023 nvd_client Data retrieved from cache.
-DEBUG 2024-09-11 02:04:49,310 nvd_client Cache is valid.
-DEBUG 2024-09-11 02:04:49,310 nvd_client Data retrieved from cache.
-INFO 2024-09-11 02:04:49,310 vulnerability_repository Successfully retrieved all fixed vulnerabilities.
-WARNING 2024-09-11 02:04:49,311 vulnerability_service No fixed vulnerabilities retrieved from the repository.
-DEBUG 2024-09-11 02:05:13,635 nvd_client Cache is valid.
-DEBUG 2024-09-11 02:05:13,635 nvd_client Data retrieved from cache.
-INFO 2024-09-11 02:05:13,635 vulnerability_repository Successfully retrieved all fixed vulnerabilities.
-WARNING 2024-09-11 02:05:13,635 vulnerability_service No fixed vulnerabilities retrieved from the repository.
-DEBUG 2024-09-11 02:07:35,734 nvd_client Cache is valid.
-DEBUG 2024-09-11 02:07:35,735 nvd_client Data retrieved from cache.
-DEBUG 2024-09-11 02:19:25,498 nvd_client Cache is invalid: No cache found.
-DEBUG 2024-09-11 02:19:26,097 nvd_client Fetched 10 vulnerabilities from API.
-DEBUG 2024-09-11 02:19:26,098 nvd_client Data fetched from API. Cache updated.
-INFO 2024-09-11 02:21:09,805 vulnerability_repository Successfully added a new fixed vulnerability with ID CVE-1999-0095.
-INFO 2024-09-11 02:22:21,758 vulnerability_repository Successfully retrieved all fixed vulnerabilities.
-DEBUG 2024-09-11 02:22:30,363 nvd_client Cache is valid.
-DEBUG 2024-09-11 02:22:30,363 nvd_client Data retrieved from cache.
-INFO 2024-09-11 02:22:30,363 vulnerability_repository Successfully retrieved all fixed vulnerabilities.
-DEBUG 2024-09-11 02:22:35,315 nvd_client Cache is valid.
-DEBUG 2024-09-11 02:22:35,315 nvd_client Data retrieved from cache.
-DEBUG 2024-09-11 02:22:52,234 nvd_client Cache is valid.
-DEBUG 2024-09-11 02:22:52,234 nvd_client Data retrieved from cache.
-INFO 2024-09-11 02:22:56,187 vulnerability_repository Successfully retrieved all fixed vulnerabilities.
+DEBUG 2024-09-11 14:32:27,027 nvd_client Cache is invalid: No cache found.
+DEBUG 2024-09-11 14:32:27,822 nvd_client Fetched 50 vulnerabilities from API.
+DEBUG 2024-09-11 14:32:27,823 nvd_client Data fetched from API. Cache updated.
+DEBUG 2024-09-11 14:32:29,955 nvd_client Cache is valid.
+DEBUG 2024-09-11 14:32:29,955 nvd_client Data retrieved from cache.
+DEBUG 2024-09-11 14:40:31,245 nvd_client Cache is invalid: No cache found.
+DEBUG 2024-09-11 14:40:33,155 nvd_client Fetched 50 vulnerabilities from API.
+DEBUG 2024-09-11 14:40:33,156 nvd_client Data fetched from API. Cache updated.
+DEBUG 2024-09-11 14:53:38,209 nvd_client Cache is invalid: No cache found.
+DEBUG 2024-09-11 14:54:04,631 nvd_client Cache is invalid: No cache found.
+DEBUG 2024-09-11 14:54:06,911 nvd_client Fetched 50 vulnerabilities from API.
+DEBUG 2024-09-11 14:54:06,911 nvd_client Data fetched from API. Cache updated.
+DEBUG 2024-09-11 14:54:08,554 nvd_client Fetched 50 vulnerabilities from API.
+DEBUG 2024-09-11 14:54:08,555 nvd_client Data fetched from API. Cache updated.
+INFO 2024-09-11 14:54:14,831 vulnerability_repository Successfully retrieved all fixed vulnerabilities.
+WARNING 2024-09-11 14:54:14,837 vulnerability_service No fixed vulnerabilities retrieved from the repository.
+INFO 2024-09-11 14:54:24,741 vulnerability_repository Successfully retrieved all fixed vulnerabilities.
+WARNING 2024-09-11 14:54:24,746 vulnerability_service No fixed vulnerabilities retrieved from the repository.
+DEBUG 2024-09-11 14:54:38,406 nvd_client Cache is valid.
+DEBUG 2024-09-11 14:54:38,406 nvd_client Vulnerability dsdd existence check: False
+ERROR 2024-09-11 14:54:38,406 vulnerability_service Error adding vulnerabilities to fixed list or sending alerts: Vulnerability with Id: dsdd does not exists in NIST data base
+Traceback (most recent call last):
+  File "/app/apps/vulnerabilities/services/vulnerability_service.py", line 139, in add_to_fixed_vulnerabilities
+    raise ValueError(
+ValueError: Vulnerability with Id: dsdd does not exists in NIST data base
+ERROR 2024-09-11 14:54:38,411 vulnerability_views Error marking vulnerabilities as fixed: Vulnerability with Id: dsdd does not exists in NIST data base
+Traceback (most recent call last):
+  File "/app/apps/vulnerabilities/views/vulnerability_views.py", line 104, in post
+    service.add_to_fixed_vulnerabilities(serializer.validated_data)
+  File "/app/apps/vulnerabilities/services/vulnerability_service.py", line 139, in add_to_fixed_vulnerabilities
+    raise ValueError(
+ValueError: Vulnerability with Id: dsdd does not exists in NIST data base
+DEBUG 2024-09-11 14:54:50,965 nvd_client Cache is valid.
+DEBUG 2024-09-11 14:54:50,965 nvd_client Vulnerability CVE-1999-0095 existence check: True
+INFO 2024-09-11 14:54:51,137 vulnerability_repository Successfully added a new fixed vulnerability with ID CVE-1999-0095.
+INFO 2024-09-11 14:54:51,282 vulnerability_observer Alert sent to admin@example.com with message: The vulnerability CVE-1999-0095 has been fixed.
+DEBUG 2024-09-11 14:54:57,377 nvd_client Cache is valid.
+DEBUG 2024-09-11 14:54:57,378 nvd_client Data retrieved from cache.
+DEBUG 2024-09-11 14:55:00,709 nvd_client Cache is valid.
+DEBUG 2024-09-11 14:55:00,709 nvd_client Data retrieved from cache.
+INFO 2024-09-11 14:55:00,709 vulnerability_repository Successfully retrieved all fixed vulnerabilities.
+DEBUG 2024-09-11 14:55:07,849 nvd_client Cache is valid.
+DEBUG 2024-09-11 14:55:07,849 nvd_client Data retrieved from cache.
+DEBUG 2024-09-11 14:55:10,479 nvd_client Cache is valid.
+DEBUG 2024-09-11 14:55:10,479 nvd_client Data retrieved from cache.

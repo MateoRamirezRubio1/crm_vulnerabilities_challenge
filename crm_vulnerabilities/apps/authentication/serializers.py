@@ -6,18 +6,16 @@ User = get_user_model()
 
 
 class CustomTokenObtainPairSerializer(TokenObtainPairSerializer):
-    """Serializador personalizado para obtener tokens JWT, incluye rol de usuario"""
+    """Custom serializer to include user role in JWT tokens"""
 
     def validate(self, attrs):
         data = super().validate(attrs)
-        data["role"] = (
-            self.user.role
-        )  # Incluir el rol del usuario en el payload del token
+        data["role"] = self.user.role  # Add user's role to the token payload
         return data
 
 
 class RegisterSerializer(serializers.ModelSerializer):
-    """Serializador para registrar nuevos usuarios"""
+    """Serializer for registering new users"""
 
     username = serializers.CharField(max_length=150)
     password = serializers.CharField(write_only=True)

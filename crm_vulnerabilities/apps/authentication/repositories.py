@@ -1,18 +1,25 @@
+import logging
 from django.contrib.auth import get_user_model
 
 User = get_user_model()
+logger = logging.getLogger("authentication")
 
 
 class UserRepository:
-    """Repositorio para gestionar operaciones de base de datos de usuarios"""
+    """Repository for managing user database operations"""
 
     def save_user(self, user_data, password):
-        """Guardar un nuevo usuario en la base de datos"""
-        user = User(
-            email=user_data["email"],
-            username=user_data["username"],
-            role=user_data["role"],
-        )
-        user.set_password(password)  # Encriptar la contraseña
-        user.save()
-        return user
+        """Save a new user to the database"""
+        try:
+            user = User(
+                email=user_data["email"],
+                username=user_data["username"],
+                role=user_data["role"],
+            )
+            user.set_password(password)  # Encrypt the password
+            user.save()
+            logger.info(f"User {user_data['username']} saved successfully.")
+            return user
+        except Exception as e:
+            logger.error(f"Failed to save user {user_data['username']}: {e}")
+            raise
