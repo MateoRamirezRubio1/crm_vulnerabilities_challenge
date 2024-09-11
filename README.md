@@ -35,6 +35,9 @@ El proyecto implementa un rate limiter o limitador de tasa que restringe el núm
 
 Cuando se supera este límite, el cliente recibe una respuesta de error (429 Too Many Requests), indicando que deberá esperar antes de realizar más solicitudes. Este mecanismo protege tanto el servidor como el cliente al regular el flujo de datos y asegurar un acceso justo para todos los usuarios.
 
+# Logging
+En el proyecto, se implementó el uso de logging para mejorar la visibilidad y el rastreo de los eventos y errores dentro de la aplicación. Este enfoque nos permite registrar información clave sobre la ejecución del código, como la recuperación de datos desde una API externa o el estado de la caché. Gracias a los logs, podemos monitorizar la aplicación de manera más efectiva, identificar y diagnosticar problemas rápidamente y mantener un registro detallado de las operaciones realizadas, lo cual es fundamental para el mantenimiento y la depuración del sistema. El uso de logging contribuye significativamente a la robustez y la transparencia del proyecto.
+
 # Módulo de Vulnerabilidades
 
 ## Descripción
