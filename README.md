@@ -4,6 +4,7 @@ Primero, clona el repositorio en tu máquina local:
 
 ```bash
 git clone https://github.com/MateoRamirezRubio1/crm_vulnerabilities_challenge.git
+cd crm_vulnerabilities_challenge
 cd crm_vulnerabilities
 ```
 
