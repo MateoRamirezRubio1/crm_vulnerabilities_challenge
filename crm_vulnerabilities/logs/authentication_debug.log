@@ -25,3 +25,42 @@ INFO 2024-09-11 19:36:59,394 repositories User juan saved successfully.
 INFO 2024-09-11 19:36:59,394 services User juan registered successfully.
 INFO 2024-09-11 19:36:59,394 views User registered successfully: juan
 ERROR 2024-09-11 19:37:15,039 views Error obtaining JWT token: table token_blacklist_outstandingtoken has no column named jti
+ERROR 2024-09-11 22:08:06,614 repositories Failed to save user prueba: no such table: authentication_user
+ERROR 2024-09-11 22:08:07,095 services Failed to register user prueba: no such table: authentication_user
+ERROR 2024-09-11 22:08:07,095 views Error during user registration: no such table: authentication_user
+ERROR 2024-09-11 22:08:40,799 views Error obtaining JWT token: no such table: authentication_user
+ERROR 2024-09-11 22:09:43,229 repositories Failed to save user prueba: no such table: authentication_user
+ERROR 2024-09-11 22:09:43,229 services Failed to register user prueba: no such table: authentication_user
+ERROR 2024-09-11 22:09:43,229 views Error during user registration: no such table: authentication_user
+ERROR 2024-09-11 22:11:06,135 repositories Failed to save user prueba: no such table: authentication_user
+ERROR 2024-09-11 22:11:06,137 services Failed to register user prueba: no such table: authentication_user
+ERROR 2024-09-11 22:11:06,137 views Error during user registration: no such table: authentication_user
+INFO 2024-09-11 22:15:47,182 repositories User prueba saved successfully.
+INFO 2024-09-11 22:15:47,182 services User prueba registered successfully.
+INFO 2024-09-11 22:15:47,182 views User registered successfully: prueba
+INFO 2024-09-11 22:16:04,352 views JWT token obtained successfully for user: prueba
+INFO 2024-09-11 22:16:22,763 repositories User juan saved successfully.
+INFO 2024-09-11 22:16:22,763 services User juan registered successfully.
+INFO 2024-09-11 22:16:22,763 views User registered successfully: juan
+INFO 2024-09-11 22:16:31,896 views JWT token obtained successfully for user: juan
+INFO 2024-09-11 22:16:59,722 repositories User root saved successfully.
+INFO 2024-09-11 22:16:59,722 services User root registered successfully.
+INFO 2024-09-11 22:16:59,722 views User registered successfully: root
+INFO 2024-09-11 22:17:08,251 views JWT token obtained successfully for user: root
+INFO 2024-09-12 03:30:00,091 repositories User prueba saved successfully.
+INFO 2024-09-12 03:30:00,091 services User prueba registered successfully.
+INFO 2024-09-12 03:30:00,091 views User registered successfully: prueba
+INFO 2024-09-12 03:30:09,857 views JWT token obtained successfully for user: prueba
+INFO 2024-09-12 03:30:33,401 views JWT token obtained successfully for user: prueba
+ERROR 2024-09-12 03:32:54,430 views Error blacklisting refresh token: Token is blacklisted
+ERROR 2024-09-12 03:32:58,893 views Error blacklisting refresh token: Token is blacklisted
+INFO 2024-09-12 03:33:38,651 repositories User juan saved successfully.
+INFO 2024-09-12 03:33:38,652 services User juan registered successfully.
+INFO 2024-09-12 03:33:38,652 views User registered successfully: juan
+INFO 2024-09-12 03:33:46,382 views JWT token obtained successfully for user: juan
+INFO 2024-09-12 03:51:08,155 repositories User prueba saved successfully.
+INFO 2024-09-12 03:51:08,171 services User prueba registered successfully.
+INFO 2024-09-12 03:51:08,171 views User registered successfully: prueba
+INFO 2024-09-12 03:53:08,200 views JWT token obtained successfully for user: prueba
+INFO 2024-09-12 03:56:53,348 views Refresh token blacklisted successfully.
+ERROR 2024-09-12 03:58:03,848 views Error blacklisting refresh token: Token is blacklisted

@@ -17,18 +17,17 @@ docker-compose up --build
 Esto realizará las siguientes acciones:
 
 Construir la imagen Docker definida en el Dockerfile.
-Ejecutar los comandos necesarios de migración de la base de datos:
-python manage.py makemigrations
-python manage.py migrate
-python manage.py migrate token_blacklist zero
-Iniciar el servidor de desarrollo de Django en el puerto 8000.
+Inicia el servidor de desarrollo de Django en el puerto 8000.
 
-## 3. Acceder a la aplicación
-Una vez que el contenedor esté en funcionamiento, puedes acceder a la aplicación desde tu navegador en la siguiente URL:
+## 3. Ejecutar Docker Compose Sin Construcción (Para Ejecuciones Futuras)
+Para ejecutar el proyecto sin reconstruir las imágenes (esto es útil después de la primera ejecución):
+```bash
+docker-compose up
+```
 
-```
-http://localhost:8000
-```
+
+
+# **Descripciones y algunas explicaciones cortas de funcionalidades y apps django del proyecto**
 
 # Implementación de Rate Limiting
 El proyecto implementa un rate limiter o limitador de tasa que restringe el número de peticiones que se pueden realizar a la API. Este rate limiter ha sido configurado para permitir un máximo de 15 peticiones por minuto, lo que previene que un solo cliente realice demasiadas solicitudes en un corto periodo, evitando una sobrecarga en la API.
