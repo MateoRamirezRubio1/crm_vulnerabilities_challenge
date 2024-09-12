@@ -243,9 +243,10 @@ El módulo proporciona los siguientes endpoints para interactuar con las vulnera
 - **`GET /api/vulnerabilities/`**: Obtiene la lista completa de vulnerabilidades.
 - **`GET /api/vulnerabilities/unfixed/`**: Obtiene la lista de vulnerabilidades que no han sido solucionadas.
 - **`GET /api/vulnerabilities/fixed/`**: Obtiene la lista de vulnerabilidades solucionadas.
+- **`POST /api/vulnerabilities/fixed/`**: Permite ingresar y crear una nueva vulneravilidad que ha sido fixeada.
 - **`GET /api/vulnerabilities/summary/`**: Obtiene un resumen de las vulnerabilidades (solucionadas y no solucionadas).
 
-## Uso de Cache en el Cliente NIST
+## **Uso de Cache en el Cliente NIST**
 
 El cliente de la API de NVD (National Vulnerability Database) ha sido diseñado para optimizar las solicitudes utilizando **caché en memoria**. Cada vez que se solicita la lista de vulnerabilidades, el cliente primero verifica si los datos previamente obtenidos siguen siendo válidos, basándose en un tiempo de expiración definido (`CACHE_TIMEOUT` de 3600 segundos o 1 hora).
 
