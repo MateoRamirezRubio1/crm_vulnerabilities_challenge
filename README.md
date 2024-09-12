@@ -25,6 +25,156 @@ Para ejecutar el proyecto sin reconstruir las imágenes (esto es útil después 
 docker-compose up
 ```
 
+## **Guía básica de uso de las APIs REST del proyecto.**
+
+Esta guía explica cómo interactuar con los diferentes endpoints de la APIs para gestionar vulnerabilidades, alertas y usuarios. A través de estos pasos, puedes obtener vulnerabilidades desde la base de datos NIST, marcarlas como corregidas y recibir notificaciones por correo. También veremos cómo registrar, autenticar y administrar usuarios. 
+
+### 1. Obtener todas las vulnerabilidades
+
+#### Endpoint
+**GET**: `http://127.0.0.1:8000/v1/vulnerabilities/`
+
+Este endpoint te permite obtener una lista de todas las vulnerabilidades registradas en la base de datos de NIST. La respuesta incluye información relevante, como el ID de la vulnerabilidad (CVE), una descripción y su severidad.
+
+Ejemplo de respuesta:
+![image](https://github.com/user-attachments/assets/1142f664-96e1-4969-9d3c-850071832dab)
+  
+### 2. Marcar una vulnerabilidad como corregida
+
+#### Endpoint
+**POST**: `http://127.0.0.1:8000/v1/vulnerabilities/fixed/`
+
+Para marcar una vulnerabilidad como corregida, envía la información correspondiente en un formato JSON. Aquí se indica que la vulnerabilidad **CVE-1999-0095** ha sido corregida.
+
+Entrada JSON de ejemplo:
+```json
+{
+    "id": "CVE-1999-0095",
+    "description": "The debug command in Sendmail is enabled, allowing attackers to execute commands as root.",
+    "severity": "HIGH"
+}
+```
+
+![image](https://github.com/user-attachments/assets/84cae98b-53f5-4d0b-8795-41b14812d7a8)
+
+### 3. Obtener vulnerabilidades no corregidas
+
+#### Endpoint
+**GET**: `http://127.0.0.1:8000/v1/vulnerabilities/unfixed/`
+
+Este endpoint devuelve una lista de vulnerabilidades que aún no han sido marcadas como corregidas. Si consultas este endpoint después de marcar una vulnerabilidad como corregida, esta ya no aparecerá en la lista.
+
+Por ejemplo, si acabas de corregir **CVE-1999-0095**, ya no debería figurar en los resultados, pero sí las demas vulnerabilidades
+
+![image](https://github.com/user-attachments/assets/eee16bc2-5648-414b-98e0-235f01259497)
+
+Este comportamiento es importante porque confirma que la acción de marcación ha tenido efecto.
+
+### 4. Obtener un resumen de vulnerabilidades agrupadas por severidad
+
+#### Endpoint
+**GET**: `http://127.0.0.1:8000/v1/vulnerabilities/summary/`
+
+Este endpoint proporciona un resumen general de todas las vulnerabilidades, agrupadas según su severidad (por ejemplo, **HIGH**, **MEDIUM**, **LOW**). Te permite ver cuántas vulnerabilidades existen en cada categoría.
+
+![image](https://github.com/user-attachments/assets/cbabd65d-a6b9-47ee-99e9-0aaccf811628)
+
+El resumen es útil para comprender la gravedad general de las vulnerabilidades en el sistema y priorizar las correcciones.
+
+### 5. Ver todas las alertas
+
+#### Endpoint
+**GET**: `http://127.0.0.1:8000/v1/alerts/`
+
+Cuando se marca una vulnerabilidad como corregida, se genera una alerta o notificación que se envía al destinatario especificado. En este caso, una alerta será enviada notificando que la vulnerabilidad **CVE-1999-0095** ha sido corregida. Puedes consultar todas las alertas utilizando este endpoint.
+
+Las alertas se envían dependiendo de la severidad de la vulnerabilidad fixeada por un medio de notificación diferene, por ejemplo para la vulnerabilidad fixeada que ingresamos cuya severidad es HIGH sera enviada la alerta por correo electrónico:
+
+![image](https://github.com/user-attachments/assets/772ee576-2078-4961-a63c-f1f38c7b196b)
+
+### 6. Registrar un nuevo usuario
+
+#### Endpoint
+**POST**: `http://127.0.0.1:8000/v1/auth/register/`
+
+Para registrar un nuevo usuario, se envían detalles como el nombre de usuario, la contraseña y el correo electrónico. En este ejemplo, estamos registrando un usuario con rol de administrador.
+
+Entrada JSON:
+```json
+{
+    "username": "prueba",
+    "password": "123",
+    "email": "prueba@correo.com",
+    "role": "admin"
+}
+```
+
+Después de realizar esta acción, el sistema confirmará que el usuario se ha registrado con éxito.
+
+![image](https://github.com/user-attachments/assets/cb3273ab-a7e3-40d2-87de-d8392a2e57e4)
+
+### 7. Iniciar sesión
+
+#### Endpoint
+**POST**: `http://127.0.0.1:8000/v1/auth/login/`
+
+Este endpoint es para iniciar sesión en el sistema. Debes enviar el nombre de usuario y la contraseña que se utilizaron al registrarse. El sistema te devolverá un token de acceso y un token de refresco que puedes usar para futuras solicitudes autenticadas.
+
+Entrada JSON:
+```json
+{
+    "username": "prueba",
+    "password": "123"
+}
+```
+
+![image](https://github.com/user-attachments/assets/cb0ffd92-b3e9-4404-b54f-286ecc4ee66d)
+
+El token de acceso te permite realizar solicitudes protegidas, mientras que el token de refresco sirve para obtener un nuevo token de acceso cuando expire.
+
+### 8. Refrescar el token de acceso
+
+#### Endpoint
+**POST**: `http://127.0.0.1:8000/v1/auth/refresh/`
+
+Cuando el token de acceso expira, puedes usar este endpoint para obtener uno nuevo usando el token de refresco. Esto asegura que el usuario no tenga que iniciar sesión nuevamente.
+El token de acceso debe ser dado por el JWT Bearer y en el cuerdo de la solicitud el token de refresh:
+
+Entrada JSON:
+```json
+{
+    "refresh": "token_de_refresh_aquí"
+}
+```
+
+![image](https://github.com/user-attachments/assets/ba6d49ce-572c-4f1b-b8bf-e1c618d50047)
+
+El sistema devolverá un nuevo token de acceso que puedes usar en futuras solicitudes.
+
+### 9. Cerrar sesión
+
+#### Endpoint
+**POST**: `http://127.0.0.1:8000/v1/auth/logout/`
+
+Para cerrar sesión, utiliza este endpoint. Debes enviar el token de refresco junto con el token de acceso en el encabezado de la solicitud. Esto revocará el token, y si intentas usarlo después de cerrar sesión, recibirás un error de "Token is blacklisted".
+El token de acceso debe ser dado por el JWT Bearer y en el cuerdo de la solicitud el token de refresh:
+
+Entrada JSON:
+```json
+{
+    "refresh": "token_de_refresh_aquí"
+}
+```
+
+![image](https://github.com/user-attachments/assets/95680f2c-a15a-414e-afea-080ff181e209)
+
+![image](https://github.com/user-attachments/assets/f5029767-8b2b-4faf-b9af-85b46616caac)
+
+Esto garantiza que no puedas utilizar tokens que ya han sido revocados, añadiendo una capa extra de seguridad.
+
+---
+
+
 
 
 # **Descripciones y algunas explicaciones cortas de funcionalidades y apps django del proyecto**
