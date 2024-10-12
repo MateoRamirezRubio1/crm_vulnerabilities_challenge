@@ -26,6 +26,23 @@ Para ejecutar el proyecto sin reconstruir las imágenes (esto es útil después 
 docker-compose up
 ```
 
+## Reto a solucionar
+El equipo de seguridad está desarrollando un sistema para gestionar la seguridad de los diferentes sistemas que se encuentran desplegados en la infraestructura Cloud mediante el cruce de información con los CVEs del NIST.
+El objetivo de la aplicación permitirnos obtener un listado de vulnerabilidades del NIST (https://nvd.nist.gov/developers/vulnerabilities).
+Adicionalmente, esta aplicación debe ofrecer la posibilidad de indicarle qué vulnerabilidades ya se encuentran fixeadas en nuestra infraestructura y que NO queremos que aparezcan en el listado.
+En concreto, se debe desarrollar una API REST (con sus convenciones) que tenga los siguientes métodos:
+1. Endpoint GET que devuelve el listado total de las vulnerabilidades.
+2. Endpoint POST que reciba la/s vuln/s fixeada/s.
+3. Endpoint GET que devuelva el listado de vulnerabilidades exceptuando las fixeadas (ingresadas en el endpoint del punto 2).
+4. Endpoint GET que permita obtener información sumarizada de vulnerabilidades por severidad.
+</br>
+Consideraciones
+</br>
+- La base de datos a utilizar queda a elección.
+- Lenguaje Python
+- Usar Django REST framework.
+- La aplicación desarrollada debe poder ejecutarse dockerizada.
+
 ## **Guía básica de uso de las APIs REST del proyecto.**
 
 Esta guía explica cómo interactuar con los diferentes endpoints de la APIs para gestionar vulnerabilidades, alertas y usuarios. A través de estos pasos, puedes obtener vulnerabilidades desde la base de datos NIST, marcarlas como corregidas y recibir notificaciones por correo. También veremos cómo registrar, autenticar y administrar usuarios. 
